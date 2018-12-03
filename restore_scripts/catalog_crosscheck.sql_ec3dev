@@ -1,0 +1,8 @@
+run { 
+crosscheck backup of database;
+crosscheck archivelog all;
+delete noprompt expired backup;
+delete noprompt expired archivelog all;
+catalog start with '/oracle/db_backup/files/ec3dev1_shrink_poc' noprompt;
+}
+

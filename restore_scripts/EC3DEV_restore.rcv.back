@@ -1,0 +1,22 @@
+run{
+set until sequence 160507;
+
+set newname for datafile 8 to "/oracle/oradata/EC3DEV/NOACCESS_01.dbf";
+set newname for datafile 2 to "/oracle/oradata/EC3DEV/SAVEDTABLES_01.dbf";
+set newname for datafile 3 to "/oracle/disk2/EC3DEV/SYSAUX_01.dbf";
+set newname for datafile 1 to "/oracle/disk2/EC3DEV/SYSTEM_01.dbf";
+set newname for datafile 7 to "/oracle/disk2/EC3DEV/TBSBLOB_01.dbf";
+set newname for datafile 10 to "/oracle/oradata/EC3DEV/TBSCLOB_01.dbf";
+set newname for datafile 12 to "/oracle/oradata/EC3DEV/TBSCLOB_02.dbf";
+set newname for datafile 5 to "/oracle/disk2/EC3DEV/TBSDATA_01.dbf";
+set newname for datafile 11 to "/oracle/disk2/EC3DEV/TBSDATA_02.dbf";
+set newname for datafile 9 to "/oracle/disk2/EC3DEV/TBSIDX_01.dbf";
+set newname for datafile 4 to "/oracle/oradata/EC3DEV/UNDOTBS1_01.dbf";
+set newname for datafile 6 to "/oracle/oradata/EC3DEV/USERS_01.dbf";
+
+restore database;
+switch datafile all;
+recover database;
+alter database open resetlogs;
+}
+
